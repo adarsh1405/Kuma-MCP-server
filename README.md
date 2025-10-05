@@ -61,15 +61,14 @@ curl -X POST http://localhost:8000/register -H "Content-Type: application/json" 
 
 ## Screenshots
 
-<img src="assets/dashboard.png" alt="Dashboard Screenshot" width="400" style="display:inline-block; margin-right:10px;" />
-<img src="assets/ss1.png" alt="Policy creation" width="400" style="display:inline-block; margin-right:10px;" />
-<img src="assets/ss2.png" alt="Second screenshot" width="400" style="display:inline-block;" />
+<img width="1702" height="693" alt="dashboard" src="https://github.com/user-attachments/assets/cd5c3ea9-d351-4191-846e-ae72a90897ec" />
+<img width="400" height="500" alt="policyCreation" src="https://github.com/user-attachments/assets/1cc27b1f-8e4b-444b-8230-95fd6dba6109" />
+<img width="450" height="500" alt="insights" src="https://github.com/user-attachments/assets/d522d44f-4a66-425c-8f0b-bb69d40d30fb" />
+
 
 ## Sample Video
 
-<video src="assets/demo.mp4" controls width="600">
-    Your browser does not support the video tag.
-</video>
+
 
 ## Directory Structure
 
