@@ -16,6 +16,8 @@ Kuma-MCP-server is a lightweight, extensible server built with Python, designed 
 
 - Python 3.8+
 - `pip` for dependency management
+- Run kuma locallly / whereever you want
+- Download Claud or any local LLM which supports MCP server
 
 ### Installation
 
@@ -35,13 +37,18 @@ The server will start on `http://localhost:8000` by default.
 
 ## API Endpoints
 
-| Method | Endpoint           | Description                   |
-|--------|--------------------|-------------------------------|
-| GET    | `/services`        | List all registered services  |
-| POST   | `/register`        | Register a new service        |
-| POST   | `/deregister`      | Deregister a service          |
-| GET    | `/health`          | Health check for the server   |
-| GET    | `/status/<name>`   | Get status of a service       |
+
+| Method | Endpoint                | Description                              |
+|--------|------------------------|------------------------------------------|
+| GET    | `/services`            | List all registered services             |
+| POST   | `/register`            | Register a new service                   |
+| POST   | `/deregister`          | Deregister a service                     |
+| GET    | `/health`              | Health check for the server              |
+| GET    | `/status/<name>`       | Get status of a specific service         |
+| GET    | `/metrics`             | Get server metrics (if implemented)      |
+| GET    | `/`                    | Root endpoint, usually returns welcome   |
+
+*Note: Endpoints may vary based on your `main.py` implementation. Please refer to the code for any custom or additional endpoints.*
 
 ## Example Usage
 
@@ -51,20 +58,18 @@ Register a service:
 curl -X POST http://localhost:8000/register -H "Content-Type: application/json" -d '{"name": "service1", "address": "127.0.0.1", "port": 5000}'
 ```
 
-Check health:
-
-```bash
-curl http://localhost:8000/health
-```
 
 ## Screenshots
 
-![Dashboard Screenshot](assets/dashboard.png)
-![Service Registration Screenshot](assets/service_registration.png)
+<img src="assets/dashboard.png" alt="Dashboard Screenshot" width="400" style="display:inline-block; margin-right:10px;" />
+<img src="assets/ss1.png" alt="Policy creation" width="400" style="display:inline-block; margin-right:10px;" />
+<img src="assets/ss2.png" alt="Second screenshot" width="400" style="display:inline-block;" />
 
 ## Sample Video
 
-[![Watch the demo](assets/video_thumbnail.png)](assets/demo.mp4)
+<video src="assets/demo.mp4" controls width="600">
+    Your browser does not support the video tag.
+</video>
 
 ## Directory Structure
 
@@ -72,8 +77,8 @@ curl http://localhost:8000/health
 Kuma-MCP-server/
 ├── assets/
 │   ├── dashboard.png
-│   ├── service_registration.png
-│   ├── video_thumbnail.png
+│   ├── ss1.png
+│   ├── ss2.png
 │   └── demo.mp4
 ├── main.py
 ├── README.md
